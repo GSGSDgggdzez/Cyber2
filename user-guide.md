@@ -34,8 +34,8 @@ This project is a collaborative effort:
 
 ## 3. System Requirements
 
-- **Tested OS:** Kali Linux  
-- **Compatibility:** May work on other Debian-based distributions, but full functionality is optimized for Kali Linux.
+- **Tested OS:** Kali Linux/Ubuntu  
+- **Compatibility:** May work on other Debian-based distributions.
 
 ---
 
@@ -55,7 +55,7 @@ cd Cyber2/demo/
 ```
 ### 4.3 Install Required Packages
 
-Ensure the following packages are installed. While most are pre-installed on Kali Linux, missing tools will trigger warnings during script execution.
+Ensure the following packages are installed. While most are pre-installed on Linux Debian-based distributions, missing tools will trigger warnings during script execution.
 
 | Package      | Purpose            | Install Command                 |
 |--------------|--------------------|---------------------------------|
@@ -63,9 +63,13 @@ Ensure the following packages are installed. While most are pre-installed on Kal
 | `psmisc`     | `pstree`           | `sudo apt install psmisc -y`    |
 | `lsb-release`| `lsb_release`      | `sudo apt install lsb-release -y`|
 | `pciutils`   | `lspci`            | `sudo apt install pciutils -y`  |
+| `netcat`     | `nc`               | `sudo apt install netcat`       |
+| `stress-ng`  | `stress-ng`        | `sudo apt install stress-ng`    |
+| `iproute2`   | `ss`               | (usually pre-installed)         |
 | `util-linux` | `lsblk`            | (usually pre-installed)         |
 | `coreutils`  | `nproc`            | (usually pre-installed)         |
 | `procps`     | `free`, `ps`       | (usually pre-installed)         |
+| `wget`       | `wget`             | (usually pre-installed)         |
 
 ### 4.4 Make the Script Executable
 
@@ -224,18 +228,6 @@ LOAD AVERAGE
 
 ## 7.4 Network Management 
 
-CHECK SUPICIOUS PORT ACTIVITY
-
-- Shows currently open ports and associated services
-
-- Uses ss -tuln or netstat -tulnp to list TCP/UDP ports
-
-- Helpful for identifying exposed services and potential vulnerabilities
-
-- Static snapshot view
-
-- Press Enter to return
-
 TRAFFIC:
 
 - Real-time display of network traffic per interface
@@ -249,6 +241,18 @@ TRAFFIC:
 - Updates every second
 
 - Press Enter to exit
+
+CHECK SUPICIOUS PORT ACTIVITY
+
+- Shows currently open ports and associated services
+
+- Uses ss -tuln or netstat -tulnp to list TCP/UDP ports
+
+- Helpful for identifying exposed services and potential vulnerabilities
+
+- Static snapshot view
+
+- Press Enter to return
 
 ## 7.5 User Management
 
@@ -339,3 +343,20 @@ Problem	Solution
 - Unexpected behavior in unfinished features	Scripts under development (e.g., User or Network modules) may not behave consistently
 
 ---
+
+# 11. Testing
+
+To ensure that everything runs properly, you can use `test_script.sh`
+
+### 11.1 Make the Script Executable
+```bash
+chmod +x test_script.sh
+```
+### 11.2 Run the Script
+```bash
+./test_script.sh
+```
+This will launch the test menu interface. From there, you can choose which test you want to run with Enter. Press ctrl+c to terminate the script. 
+
+---
+

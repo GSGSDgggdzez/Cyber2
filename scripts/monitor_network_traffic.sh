@@ -49,32 +49,6 @@ show_traffic() {
     old_tx=$tx
 }
 
-# Ports to check (ssh, rdp, vnc)
-# 21     - FTP (File Transfer Protocol)
-# 22     - SSH (Secure Shell)
-# 23     - Telnet (Remote Login)
-# 25     - SMTP (Simple Mail Transfer Protocol)
-# 53     - DNS (Domain Name System)
-# 80     - HTTP (HyperText Transfer Protocol)
-# 110    - POP3 (Post Office Protocol v3)
-# 139    - NetBIOS Session Service (File/Print Sharing su Windows)
-# 143    - IMAP (Internet Message Access Protocol)
-# 445    - SMB (Server Message Block, File/Print Sharing su Windows)
-# 3389   - RDP (Remote Desktop Protocol)
-# 5900   - VNC (Virtual Network Computing)
-# 3306   - MySQL Database Server
-# 5432   - PostgreSQL Database Server
-# 6379   - Redis Database
-# 8080   - HTTP alternativo (usato da proxy/applicazioni web)
-# 8443   - HTTPS alternativo
-# 27017  - MongoDB Database Server
-# 6667   - IRC (Internet Relay Chat)
-# 5000   - Servizi vari/applicazioni di sviluppo (es. Flask)
-# 12345  - NetBus (trojan/backdoor)
-# 31337  - Elite/Back Orifice (backdoor/malware)
-# 2323   - Alternative Telnet
-MONITOR_PORTS="21 22 23 25 53 80 110 139 143 445 3389 5900 3306 5432 6379 8080 8443 27017 6667 5000 12345 31337 2323"
-
 # check_suspicious scans for established TCP connections on monitored ports and reports any suspicious activity.
 #
 # Identifies active connections involving commonly targeted or sensitive ports, logs alerts for each detected connection, and outputs formatted alerts for further monitoring. If no suspicious connections are found, notifies the user.
@@ -108,18 +82,4 @@ check_suspicious() {
         echo "No suspicious connections found."
     fi
 }
-
-# Start both functions in background
-#show_traffic "$IFACE" &
-#pid_traffic=$!
-#check_suspicious &
-#pid_susp=$!
-
-#cleanup() {
-#    echo -e "\nInterruption requested, terminating all process..."
-#    kill $pid_traffic $pid_susp 2>/dev/null
-#    wait $pid_traffic $pid_susp 2>/dev/null
-#    exit 0
-#}
-#trap cleanup SIGINT SIGTERM
 

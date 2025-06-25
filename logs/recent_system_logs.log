@@ -1,5 +1,0 @@
-2025-06-24 12:55:46 - WARNING - METRIC: CPU - VALUE: 100.00 % - THRESHOLD: 85.00 % - MESSAGE: CPU usage is high; may be overloaded
-2025-06-24 12:56:15 - WARNING - METRIC: CPU - VALUE: 12.92 % - THRESHOLD: 10.00 % - MESSAGE: Waiting too long on disk or I/O
-2025-06-24 12:57:53 - WARNING - METRIC: NETWORK - VALUE: 1582.04 KB/s - THRESHOLD: 1024.00 KB/s - MESSAGE: Suspicious download on the network: incoming traffic above threshold
-2025-06-24 12:57:54 - CRITICAL - METRIC: NETWORK - VALUE: 1  - THRESHOLD: 0  - MESSAGE: Connection to monitored port detected: 90.130.70.73::80 -> users::(("wget",pid=324928,fd=4)) (PID 324928, PROC wget)
-2025-06-24 12:59:44 - CRITICAL - METRIC: NETWORK - VALUE: 1  - THRESHOLD: 0  - MESSAGE: Connection to monitored port detected: 127.0.0.1::54321 -> : (PID , PROC )
